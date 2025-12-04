@@ -23,19 +23,71 @@
 // console.log(b);
 // var b = 10;
 
-var name = "Mentrum";
-var age = 20;
-var isstudent = true;
-var favcolor = [ "black", "skyblue"];
+// var name = "Mentrum";
+// var age = 20;
+// var isstudent = true;
+// var favcolor = [ "black", "skyblue"];
+//
+// console.log(name , age, isstudent, favcolor);
+//
+// function square(num){
+//   return num * num;
+// }
+// console.log(square(5));
+//
+// function calculate(num1, num2, operation){
+//   return eval(num1 + operation + num2);
+// }
+// console.log(calculate(5, 6, "*"));
 
-console.log(name , age, isstudent, favcolor);
 
-function square(num){
-  return num * num;
+// arrays
+const cars = ["BMW", "Audi", "Toyota"];
+cars[0] = "Mercedes";
+cars.push("Volvo");
+cars.unshift("Honda");
+// console.log(cars);
+// console.log(cars.length)
+
+//objects
+const car = {
+  name: "DBX 707",
+  model: ["2025 S", 2024],
+  brand: "Aston Martin",
+  horsepower: 707
 }
-console.log(square(5));
+car.country = "England"
+// console.log(car.model);
 
-function calculate(num1, num2, operation){
-  return eval(num1 + operation + num2);
+const users = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 20 }
+];
+
+//loop
+for (let i = 0; i < cars.length; i++) {
+  // console.log("brand:", cars[i]);
 }
-console.log(calculate(5, 6, "*"));
+for (const key in car) {
+  // console.log(key, car[key]);
+}
+
+let n = 3;
+while (n > 0) {
+  // console.log("Countdown:", n);
+  n--;
+}
+
+const numbers = [11, 22, 33, 44, 55, 66, 77, 88, 99, 100];
+let over = 0
+// for (const n of numbers){
+//   if (n % 2 === 0){
+//       console.log(n);
+//   }
+// }
+for (const n of numbers){
+  if(n > 50){
+    over += 1;
+  }
+}
+console.log(over);
