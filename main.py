@@ -94,3 +94,13 @@ class Timer:
 # Example usage:
 # with Timer():
 #     time.sleep(1)  # Some time-consuming operation
+
+import module
+from myproject.src.__init__ import add, to_lower, word_count, strip_punctuation
+
+print(module.greet("carol"))
+print(module.ask("carol"))
+print(add(7,2))
+print(to_lower("CAROL"))
+print(word_count("carol is a character in pluribus"))
+print(strip_punctuation("carol, is, a, character, in: pluribus"))
