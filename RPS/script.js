@@ -38,34 +38,40 @@ function getResult(userChoice, computerChoice) {
 }
 
 function updateScoresAndCheckWinner(result) {
+  let isDecisive = false;
+
   if (result === "you win!") {
     userScore++;
     userScoreDisplay.textContent = userScore;
+    isDecisive = true;
   } else if (result === "computer win!") {
     computerScore++;
     computerScoreDisplay.textContent = computerScore;
+    isDecisive = true;
   }
-  // No points for draw
+  // No points or increment for draw
 
-  roundsPlayed++;
-  if (roundsPlayed === maxRounds) {
-    let winnerText;
-    if (userScore > computerScore) {
-      winnerText = "You";
-    } else if (computerScore > userScore) {
-      winnerText = "Computer";
-    } else {
-      winnerText = "Tie";
+  if (isDecisive) {
+    roundsPlayed++;
+    if (roundsPlayed === maxRounds) {
+      let winnerText;
+      if (userScore > computerScore) {
+        winnerText = "You";
+      } else if (computerScore > userScore) {
+        winnerText = "Computer";
+      } else {
+        winnerText = "Tie";
+      }
+      winnerDisplay.textContent = winnerText;
+      // Disable choices to prevent further plays
+      choices.forEach(choice => choice.disabled = true);
     }
-    winnerDisplay.textContent = winnerText;
-    // Disable choices to prevent further plays
-    choices.forEach(choice => choice.disabled = true);
   }
 }
 
 choices.forEach(choice => {
   choice.addEventListener("click", (e) => {
-    if (roundsPlayed >= maxRounds) return; // Prevent plays after max rounds
+    if (roundsPlayed >= maxRounds) return; // Prevent plays after max decisive rounds
 
     const userChoice = e.target.dataset.choice;
     const computerChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
