@@ -42,6 +42,8 @@
 
 
 // arrays
+import React from "react";
+
 const cars = ["BMW", "Audi", "Toyota"];
 cars[0] = "Mercedes";
 cars.push("Volvo");
@@ -91,3 +93,14 @@ for (const n of numbers){
   }
 }
 console.log(over);
+
+<html>
+<h1 id="title">Hello</h1>
+<button id="btn">Click me</button>
+</html>
+
+// <script>
+const t = document.querySelector("#title");
+const b = document.querySelector("#btn");
+console.log(t, b);
+// </script>

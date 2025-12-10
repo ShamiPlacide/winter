@@ -16,6 +16,26 @@
 <body>
   <h1>JavaScript Basics Demo</h1>
   <button id="btn">color mode</button>
+  <h2>Event listener</h2>
+  <button id="event">watch</button>
+  <input type="text" id="names" placeholder="Enter your names">
+  <p id="display"></p>
+
+  <ul id="list"></ul>
+<button id="add">Add Item</button>
+
+<script>
+const list = document.querySelector("#list");
+const addBtn = document.querySelector("#add");
+let counter = 1;
+
+addBtn.addEventListener("click", () => {
+  const item = document.createElement("li");
+  item.textContent = "Item " + counter++;
+  list.appendChild(item);
+});
+</script>
+
   <script src="script.js"></script>
 </body>
 </html>
