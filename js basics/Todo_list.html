@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<input id="todoInput" placeholder="Add a task">
+<button id="addBtn">Add</button>
 
-</body>
-</html>
+<ul id="todoList"></ul>
+
+<script>
+const input = document.querySelector("#todoInput");
+const btn = document.querySelector("#addBtn");
+const list = document.querySelector("#todoList");
+
+btn.addEventListener("click", () => {
+  if (input.value.trim() === "") return;
+
+  const li = document.createElement("li");
+  li.textContent = input.value;
+
+  li.addEventListener("click", () => {
+    li.style.textDecoration = "line-through";
+  });
+
+  list.appendChild(li);
+  input.value = "";
+});
+</script>
