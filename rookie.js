@@ -42,7 +42,6 @@
 
 
 // arrays
-import React from "react";
 
 const cars = ["BMW", "Audi", "Toyota"];
 cars[0] = "Mercedes";
@@ -94,13 +93,23 @@ for (const n of numbers){
 }
 console.log(over);
 
-<html>
-<h1 id="title">Hello</h1>
-<button id="btn">Click me</button>
-</html>
+// Fake async API (returns data after 1 second)
+function fetchData() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({ message: "Hello async world!", time: Date.now() });
+    }, 1000);
+  });
+}
 
-// <script>
-const t = document.querySelector("#title");
-const b = document.querySelector("#btn");
-console.log(t, b);
-// </script>
+// Main async function
+async function run() {
+  console.log("Fetching data...");
+
+  const data = await fetchData();
+
+  console.log("Data received:");
+  console.log(data);
+}
+
+run();
