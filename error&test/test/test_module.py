@@ -1,5 +1,5 @@
 import pytest
-from sorc.subject import add, divide, credential  # Add credential to imports
+from subject import add, divide, credential  # Add credential to imports
 
 def test_add():
     assert add(2, 3) == 5
