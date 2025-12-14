@@ -22,4 +22,4 @@ async function fetchRandomUser() {
   }
 }
 
-button.addEventListener("click", fetchRandomUser());
+button.addEventListener("click", fetchRandomUser);
