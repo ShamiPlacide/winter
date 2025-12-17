@@ -33,8 +33,29 @@ btn.addEventListener("mouseover", function() {
   isHovering = !isHovering;
 })
 
-const input = document.querySelector("#input");
+// Changed selector from "#input" to "#names" to match index.html
+const input = document.querySelector("#names");
 const display = document.querySelector("#display");
-input.addEventListener("input", function(e) {
-  display.textContent = input.value;
-});
+
+if (input) {
+  input.addEventListener("input", function(e) {
+    display.textContent = input.value;
+  });
+}
+
+// Fetching data from GitHub API
+fetch("https://api.github.com/users/u-kevine")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("User not found or API error");
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Some GitHub users might not have a 'name' set, so fallback to 'login'
+    display.textContent = data.name || data.login;
+  })
+  .catch(error => {
+    console.error("Fetch error:", error);
+    display.textContent = "Error loading profile";
+  });
