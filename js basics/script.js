@@ -62,9 +62,9 @@ fetch("https://api.github.com/users/u-kevine")
 
 
 // calculator
-import { multiply } from "./math.js";
+import multiply from "./math.js";
 
-export function calculateTotal(price, qty) {
+function calculate(price, qty) {
   return multiply(price, qty);
 }
-console.log(calculateTotal(10, 2));
+console.log(calculate(10, 2));
