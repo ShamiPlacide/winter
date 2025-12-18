@@ -59,3 +59,12 @@ fetch("https://api.github.com/users/u-kevine")
     console.error("Fetch error:", error);
     display.textContent = "Error loading profile";
   });
+
+
+// calculator
+import { multiply } from "./math.js";
+
+export function calculateTotal(price, qty) {
+  return multiply(price, qty);
+}
+console.log(calculateTotal(10, 2));
