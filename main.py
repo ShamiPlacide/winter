@@ -104,3 +104,11 @@ print(add(7,2))
 print(to_lower("CAROL"))
 print(word_count("carol is a character in pluribus"))
 print(strip_punctuation("carol, is, a, character, in: pluribus"))
+
+url = "http://github.com/carbonfive/raygun"
+def parse():
+  for item in url:
+    parser = url.split(".")
+  print(parser[1])
+
+parse()
