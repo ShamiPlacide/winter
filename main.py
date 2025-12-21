@@ -112,3 +112,12 @@ def parse():
   print(parser[1])
 
 parse()
+
+numbers = [1, 2, 3, 4, 5, 6, 7]
+def remove_third():
+  index = 0
+  while len(numbers) > 1:
+    index = (index + 2) % len(numbers)
+    numbers.pop(index)
+  print(numbers)
+remove_third()
