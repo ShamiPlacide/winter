@@ -112,4 +112,10 @@ async function run() {
   console.log(data);
 }
 
-run();
+// run();
+
+var num=111;
+var a=num.toString(),
+    b=num.toLocaleString(),
+    c=num+""
+console.log([a,b,c])
