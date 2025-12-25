@@ -23,7 +23,7 @@ def get_user():
 
   return jsonify(user), 200
 
-app.route("/car", methods=['GET'])
+@app.route("/car", methods=['GET', 'POST'])
 def get_car():
   car = {
     "name": "BMW",
