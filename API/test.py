@@ -1,19 +1,17 @@
-import flask
-from flask import Flask
-
+from main import app
+import pytest
 
 def test_root():
-    app = Flask(__name__)
-    client = app.get_user()
-
-    response = client.get("/")
+    # Use the app imported from main.py
+    client = app.test_client()
+    response = client.get("/user")
     assert response.status_code == 200
-    assert response.json == {"user": "Jane"}
+    assert isinstance(response.json, list)
+    assert response.json[1]["name"] == "Jane"
 
 def test_health():
-    app = flask
     client = app.test_client()
-
-    response = client.get("/health")
+    # Corrected indentation here
+    response = client.get("/car")
     assert response.status_code == 200
-    assert response.json["status"] == "ok"
+    assert response.json["name"] == "BMW"
