@@ -25,7 +25,11 @@ def get_user():
 
 app.route("/car", methods=['GET', 'POST'])
 def get_car():
-  return 'Car'
+  car = {
+    "name": "BMW",
+    "model": "M5"
+  }
+  return jsonify(car), 200
 
 
 if __name__ == '__main__':

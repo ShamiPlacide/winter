@@ -11,7 +11,7 @@ def test_root():
     assert response.json == {"user": "Jane"}
 
 def test_health():
-    app = create_app()
+    app = flask
     client = app.test_client()
 
     response = client.get("/health")
