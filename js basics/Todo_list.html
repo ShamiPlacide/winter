@@ -71,7 +71,7 @@
 const input = document.querySelector("#todoInput");
 const btn = document.querySelector("#addBtn");
 const list = document.querySelector("#todoList");
-const clear = document.querySelector("#clear")
+const clear = document.querySelector(".clear")
 
 btn.addEventListener("click", () => {
   if (input.value.trim() === "") return;
@@ -81,7 +81,9 @@ btn.addEventListener("click", () => {
   li.style.color = "white";
 
   li.addEventListener("click", () => {
-    li.style.textDecoration = "line-through";
+    li.style.color = "yellow";
+    // if (li.classList.contains("completed")) li.classList.remove("completed");
+    clear.style.color = "red";
   });
 
   list.appendChild(li);
@@ -90,5 +92,6 @@ btn.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
   let remove = li.remove();
+  clear.style.color = "white";
 })
 </script>
