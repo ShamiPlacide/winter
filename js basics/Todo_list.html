@@ -1,7 +1,71 @@
-<input id="todoInput" placeholder="Add a task">
-<button id="addBtn">Add</button>
+<style>
+  body{
+    background-color: #333333;
+  }
+  input{
+    padding: 10px;
+  }
+  button{
+    padding: 10px;
+  }
+  h1{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+   }
+  h2{
+    color: white;
+    text-align: center;
+  }
+  .insert{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 
-<ul id="todoList"></ul>
+  .actions{
+    display: flex;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  ul{
+    list-style: none;
+  }
+  .got_in{
+    flex: 8;
+    padding: 20px;
+    margin: 20px 20px;
+    background-color: #222333;
+    border-radius: 10px;
+  }
+  .got_out{
+    flex: 2;
+    padding: 20px;
+    margin: 20px 20px;
+    background-color: #222333;
+    border-radius: 10px;
+  }
+</style>
+
+<div>
+  <h1>Aligned</h1>
+  <h2>welcome to Aligned to do list</h2>
+</div>
+
+<div class="insert">
+  <input id="todoInput" placeholder="Add a task">
+  <button id="addBtn">Add</button>
+</div>
+
+<div class="actions">
+  <div class="got_in">
+    <ul id="todoList"></ul>
+  </div>
+  <div class="got_out">
+    <button>Clear Completed</button>
+  </div>
+</div>
 
 <script>
 const input = document.querySelector("#todoInput");
@@ -13,6 +77,7 @@ btn.addEventListener("click", () => {
 
   const li = document.createElement("li");
   li.textContent = input.value;
+  li.style.color = "white";
 
   li.addEventListener("click", () => {
     li.style.textDecoration = "line-through";
